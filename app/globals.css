@@ -1,0 +1,60 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0a0a0f;
+  --surface:  #12121a;
+  --card:     #1a1a24;
+  --card-hov: #20202e;
+  --border:   rgba(255,255,255,0.07);
+  --accent:   #e5a00d;
+  --accent-dim: rgba(229,160,13,0.12);
+  --accent-bdr: rgba(229,160,13,0.30);
+  --text:     #f0f0f0;
+  --sub:      #888;
+  --muted:    #555;
+  --red:      #e05252;
+  --green:    #52c07a;
+  --blue:     #7b8cde;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+input, textarea, select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 13px;
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus { border-color: var(--accent-bdr); }
+input::placeholder { color: var(--muted); }
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+button:active { transform: scale(0.97); }
+
+video { display: block; width: 100%; }
+
+/* Tesla-specific: disable text selection on UI chrome */
+nav, header, .no-select { user-select: none; -webkit-user-select: none; }
